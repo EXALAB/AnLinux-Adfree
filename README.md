@@ -6,8 +6,6 @@ This is the Ads free version of AnLinux, without any limitation. If you want to 
 
 [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E2NV66N8G46KE)
 
-###
-
 This is repo for the main application. If you are looking for the images and scripts used in this app, please visit [here](https://github.com/EXALAB/AnLinux-Resources)
 
 # AnLinux
