@@ -74,7 +74,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             selected.setChecked(true);
             newFragment(0);
         }
-        if(donationInstalled()){
+        if(!donationInstalled()){
             if(isOreoNotified){
                 if(support == 5){
                     notifyUserForSupportOnce();
