@@ -156,7 +156,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             selected.setChecked(true);
             newFragment(1);
         }else if(id == R.id.support){
-            if(donationInstalled()){
+            if(!donationInstalled()){
                 notifyUserForSupport();
             }
         }else if(id == R.id.report){
