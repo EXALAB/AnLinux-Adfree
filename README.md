@@ -13,7 +13,9 @@ To open an issue, please visit [here](https://github.com/EXALAB/AnLinux-App/issu
 # AnLinux
 Run Linux On Android Without Root Access, thanks for the Awesome [Termux](https://github.com/termux/termux-app) and [PRoot](https://github.com/proot-me/PRoot), which make this project possible.
 
-You can find the application on F-Droid [Here](https://f-droid.org/en/packages/exa.lnx.a) , or download it on Github if you didn't install F-Droid.
+<a href="https://f-droid.org/app/exa.lnx.a"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="100"></a>
+
+Or download it [from Github](https://github.com/EXALAB/AnLinux-Adfree/releases) if you didn't install F-Droid.
 
 
 
@@ -25,9 +27,9 @@ The bash script download image over internet, then decompress the image and then
 
 ## Desktop Environment
 
-We currently supported 4 Desktop Environment, and only [Ubuntu](https://www.ubuntu.com/), [Debian](https://www.debian.org/), [Kali](https://www.kali.org/), [Parrot Security OS](https://www.parrotsec.org/), [Fedora](https://getfedora.org/), [Arch Linux](https://www.archlinux.org/) distro are supported.
+We currently support 4 Desktop Environments, and only [Ubuntu](https://www.ubuntu.com/), [Debian](https://www.debian.org/), [Kali](https://www.kali.org/), [Parrot Security OS](https://www.parrotsec.org/), [Fedora](https://getfedora.org/), [Arch Linux](https://www.archlinux.org/) distros are supported.
 
-Supported Desktop Environment:
+Supported Desktop Environments:
 
 1. [Xfce4](https://xfce.org)
 2. [Mate](https://mate-desktop.org)
@@ -40,15 +42,14 @@ If you have any tweak, suggestion, recommendation, please open an issue on Githu
 
 ## Note
 
-1. This app required [Termux](https://github.com/termux/termux-app) to work, it could be install on Play Store. Or download it from [F-Droid](https://f-droid.org/packages/com.termux/) if you dont have access to Play Store
+1. This app requires [Termux](https://github.com/termux/termux-app) to work, install it from F-Droid
+2. About device requirements:
 
-2. About device requirement:
+   Android Version : At least Android Lollipop
 
-   Android Version : At lease Android Lollipop
+   Architecture : armv7, arm64, x86, x86_64
 
-   Architeture : armv7, arm64, x86, x86_64
-
-3. Currently supported distro:
+3. Currently supported distros:
 
    [Ubuntu](https://www.ubuntu.com/), [Debian](https://www.debian.org/), [Kali](https://www.kali.org/), [Parrot Security OS](https://www.parrotsec.org/), [Fedora](https://getfedora.org/), [CentOS](https://www.centos.org/), [openSUSE Leap](https://www.opensuse.org/), [openSUSE Tumbleweed](https://www.opensuse.org/), [Arch Linux](https://www.archlinux.org/), [BlackArch](https://blackarch.org/)
 
