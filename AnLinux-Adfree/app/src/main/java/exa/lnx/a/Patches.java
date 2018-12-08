@@ -166,7 +166,7 @@ public class Patches extends Fragment {
                 try{
                     startActivity(intent);
                 }catch(ActivityNotFoundException e){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.termux")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://f-droid.org/packages/com.termux/")));
                 }
                 dialog.dismiss();
             }
