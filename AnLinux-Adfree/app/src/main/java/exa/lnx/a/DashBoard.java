@@ -22,9 +22,6 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class DashBoard extends Fragment {
 
     Context context;

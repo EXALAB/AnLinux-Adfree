@@ -20,9 +20,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class SSH extends Fragment {
 
     Context context;
