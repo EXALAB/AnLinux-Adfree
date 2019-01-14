@@ -80,6 +80,9 @@ public class Uninstaller extends Fragment{
                 }else if(distro.equals("Kali")){
                     ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Kali/UNI-kali.sh && bash UNI-kali.sh");
                     clipboard.setPrimaryClip(clip);
+                }else if(distro.equals("Nethunter")){
+                    ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Nethunter/UNI-nethunter.sh && bash UNI-nethunter.sh");
+                    clipboard.setPrimaryClip(clip);
                 }else if(distro.equals("Parrot")){
                     ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Parrot/UNI-parrot.sh && bash UNI-parrot.sh");
                     clipboard.setPrimaryClip(clip);
@@ -106,6 +109,9 @@ public class Uninstaller extends Fragment{
                         ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Arch/UNI-arch.sh && bash UNI-arch.sh");
                         clipboard.setPrimaryClip(clip);
                     }
+                }else if(distro.equals("Alpine")){
+                    ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Alpine/UNI-alpine.sh && bash UNI-alpine.sh");
+                    clipboard.setPrimaryClip(clip);
                 }
             }
         });
@@ -138,6 +144,8 @@ public class Uninstaller extends Fragment{
         final CheckBox checkBox8 = view.findViewById(R.id.checkBox8);
         final CheckBox checkBox9 = view.findViewById(R.id.checkBox9);
         final CheckBox checkBox10 = view.findViewById(R.id.checkBox10);
+        final CheckBox checkBox11 = view.findViewById(R.id.checkBox11);
+        final CheckBox checkBox12 = view.findViewById(R.id.checkBox12);
 
         alertDialog.setView(view);
         alertDialog.setCancelable(false);
@@ -148,18 +156,22 @@ public class Uninstaller extends Fragment{
             checkBox2.setChecked(true);
         }else if(distro.equals("Kali")){
             checkBox3.setChecked(true);
-        }else if(distro.equals("Parrot")){
+        }else if(distro.equals("Nethunter")){
             checkBox4.setChecked(true);
-        }else if(distro.equals("Fedora")){
+        }else if(distro.equals("Parrot")){
             checkBox5.setChecked(true);
-        }else if(distro.equals("CentOS")){
+        }else if(distro.equals("Fedora")){
             checkBox6.setChecked(true);
-        }else if(distro.equals("Leap")){
+        }else if(distro.equals("CentOS")){
             checkBox7.setChecked(true);
-        }else if(distro.equals("Tumbleweed")){
+        }else if(distro.equals("Leap")){
             checkBox8.setChecked(true);
-        }else if(distro.equals("Arch")){
+        }else if(distro.equals("Tumbleweed")){
             checkBox9.setChecked(true);
+        }else if(distro.equals("Arch")){
+            checkBox10.setChecked(true);
+        }else if(distro.equals("Alpine")){
+            checkBox12.setChecked(true);
         }
 
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -173,6 +185,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox2.setOnClickListener(new View.OnClickListener() {
@@ -186,6 +200,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox3.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +215,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox4.setOnClickListener(new View.OnClickListener() {
@@ -212,6 +230,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox5.setOnClickListener(new View.OnClickListener() {
@@ -225,6 +245,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox6.setOnClickListener(new View.OnClickListener() {
@@ -238,6 +260,8 @@ public class Uninstaller extends Fragment{
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox7.setOnClickListener(new View.OnClickListener() {
@@ -251,6 +275,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox8.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox8.setOnClickListener(new View.OnClickListener() {
@@ -264,6 +290,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
             }
         });
         checkBox9.setOnClickListener(new View.OnClickListener() {
@@ -277,22 +305,54 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox12.setChecked(false);
+            }
+        });
+        checkBox10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBox.setChecked(false);
+                checkBox2.setChecked(false);
+                checkBox3.setChecked(false);
+                checkBox4.setChecked(false);
+                checkBox5.setChecked(false);
+                checkBox6.setChecked(false);
+                checkBox7.setChecked(false);
+                checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox12.setChecked(false);
+            }
+        });
+        checkBox12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBox.setChecked(false);
+                checkBox2.setChecked(false);
+                checkBox3.setChecked(false);
+                checkBox4.setChecked(false);
+                checkBox5.setChecked(false);
+                checkBox6.setChecked(false);
+                checkBox7.setChecked(false);
+                checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
             }
         });
         if(s.equals("i386")){
-            checkBox5.setEnabled(false);
-            checkBox7.setEnabled(false);
+            checkBox6.setEnabled(false);
             checkBox8.setEnabled(false);
             checkBox9.setEnabled(false);
             checkBox10.setEnabled(false);
-            checkBox5.setText("Not supported");
-            checkBox7.setText("Not supported");
+            checkBox11.setEnabled(false);
+            checkBox6.setText("Not supported");
             checkBox8.setText("Not supported");
             checkBox9.setText("Not supported");
             checkBox10.setText("Not supported");
+            checkBox11.setText("Not supported");
         }else{
-            checkBox10.setEnabled(false);
-            checkBox10.setText("Same as Arch Linux");
+            checkBox11.setEnabled(false);
+            checkBox11.setText("Same as Arch Linux");
         }
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
@@ -309,28 +369,36 @@ public class Uninstaller extends Fragment{
                         distro = "Kali";
                     }
                 }else if(checkBox4.isChecked()){
+                    if(!distro.equals("Nethunter")){
+                        distro = "Nethunter";
+                    }
+                }else if(checkBox5.isChecked()){
                     if(!distro.equals("Parrot")){
                         distro = "Parrot";
                     }
-                }else if(checkBox5.isChecked()){
+                }else if(checkBox6.isChecked()){
                     if(!distro.equals("Fedora")){
                         distro = "Fedora";
                     }
-                }else if(checkBox6.isChecked()){
+                }else if(checkBox7.isChecked()){
                     if(!distro.equals("CentOS")){
                         distro = "CentOS";
                     }
-                }else if(checkBox7.isChecked()){
+                }else if(checkBox8.isChecked()){
                     if(!distro.equals("Leap")){
                         distro = "Leap";
                     }
-                }else if(checkBox8.isChecked()){
+                }else if(checkBox9.isChecked()){
                     if(!distro.equals("Tumbleweed")){
                         distro = "Tumbleweed";
                     }
-                }else if(checkBox9.isChecked()){
+                }else if(checkBox10.isChecked()){
                     if(!distro.equals("Arch")){
                         distro = "Arch";
+                    }
+                }else if(checkBox12.isChecked()){
+                    if(!distro.equals("Alpine")){
+                        distro = "Alpine";
                     }
                 }
                 if(distro.equals("Ubuntu")){
@@ -341,6 +409,9 @@ public class Uninstaller extends Fragment{
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }else if(distro.equals("Kali")){
                     textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Kali/UNI-kali.sh && bash UNI-kali.sh \n\n This should fully remove Kali from your system.");
+                    textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
+                }else if(distro.equals("Nethunter")){
+                    textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Nethunter/UNI-nethunter.sh && bash UNI-nethunter.sh \n\n This should fully remove Kali Nethunter from your system.");
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }else if(distro.equals("Parrot")){
                     textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Parrot/UNI-parrot.sh && bash UNI-parrot.sh \n\n This should fully remove Parrot Security OS from your system.");
@@ -365,6 +436,9 @@ public class Uninstaller extends Fragment{
                         textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Arch/UNI-arch.sh && bash UNI-arch.sh \n\n This should fully remove Arch Linux from your system.");
                         textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                     }
+                }else if(distro.equals("Alpine")){
+                    textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Alpine/UNI-alpine.sh && bash UNI-alpine.sh \n\n This should fully remove Alpine from your system.");
+                    textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }
                 button2.setEnabled(true);
                 button3.setEnabled(true);
@@ -393,6 +467,8 @@ public class Uninstaller extends Fragment{
         final CheckBox checkBox7 = view.findViewById(R.id.checkBox7);
         final CheckBox checkBox8 = view.findViewById(R.id.checkBox8);
         final CheckBox checkBox9 = view.findViewById(R.id.checkBox9);
+        final CheckBox checkBox10 = view.findViewById(R.id.checkBox10);
+        final CheckBox checkBox11 = view.findViewById(R.id.checkBox11);
 
         alertDialog.setView(view);
         alertDialog.setCancelable(false);
@@ -403,16 +479,20 @@ public class Uninstaller extends Fragment{
             checkBox2.setChecked(true);
         }else if(distro.equals("Kali")){
             checkBox3.setChecked(true);
-        }else if(distro.equals("Parrot")){
+        }else if(distro.equals("Nethunter")){
             checkBox4.setChecked(true);
-        }else if(distro.equals("Fedora")){
+        }else if(distro.equals("Parrot")){
             checkBox5.setChecked(true);
-        }else if(distro.equals("CentOS")){
+        }else if(distro.equals("Fedora")){
             checkBox6.setChecked(true);
-        }else if(distro.equals("openSUSE")){
+        }else if(distro.equals("CentOS")){
             checkBox7.setChecked(true);
-        }else if(distro.equals("Arch")){
+        }else if(distro.equals("openSUSE")){
             checkBox8.setChecked(true);
+        }else if(distro.equals("Arch")){
+            checkBox9.setChecked(true);
+        }else if(distro.equals("Alpine")){
+            checkBox11.setChecked(true);
         }
 
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -425,6 +505,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox2.setOnClickListener(new View.OnClickListener() {
@@ -437,6 +519,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox3.setOnClickListener(new View.OnClickListener() {
@@ -449,6 +533,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox4.setOnClickListener(new View.OnClickListener() {
@@ -461,6 +547,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox5.setOnClickListener(new View.OnClickListener() {
@@ -473,6 +561,8 @@ public class Uninstaller extends Fragment{
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox6.setOnClickListener(new View.OnClickListener() {
@@ -485,6 +575,8 @@ public class Uninstaller extends Fragment{
                 checkBox5.setChecked(false);
                 checkBox7.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox7.setOnClickListener(new View.OnClickListener() {
@@ -497,6 +589,8 @@ public class Uninstaller extends Fragment{
                 checkBox5.setChecked(false);
                 checkBox6.setChecked(false);
                 checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
             }
         });
         checkBox8.setOnClickListener(new View.OnClickListener() {
@@ -509,20 +603,50 @@ public class Uninstaller extends Fragment{
                 checkBox5.setChecked(false);
                 checkBox6.setChecked(false);
                 checkBox7.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox11.setChecked(false);
+            }
+        });
+        checkBox9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBox.setChecked(false);
+                checkBox2.setChecked(false);
+                checkBox3.setChecked(false);
+                checkBox4.setChecked(false);
+                checkBox5.setChecked(false);
+                checkBox6.setChecked(false);
+                checkBox7.setChecked(false);
+                checkBox8.setChecked(false);
+                checkBox11.setChecked(false);
+            }
+        });
+        checkBox11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBox.setChecked(false);
+                checkBox2.setChecked(false);
+                checkBox3.setChecked(false);
+                checkBox4.setChecked(false);
+                checkBox5.setChecked(false);
+                checkBox6.setChecked(false);
+                checkBox7.setChecked(false);
+                checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
             }
         });
         if(s.equals("i386")){
-            checkBox5.setEnabled(false);
-            checkBox7.setEnabled(false);
+            checkBox6.setEnabled(false);
             checkBox8.setEnabled(false);
             checkBox9.setEnabled(false);
-            checkBox5.setText("Not supported");
-            checkBox7.setText("Not supported");
+            checkBox10.setEnabled(false);
+            checkBox6.setText("Not supported");
             checkBox8.setText("Not supported");
             checkBox9.setText("Not supported");
+            checkBox10.setText("Not supported");
         }else{
-            checkBox9.setEnabled(false);
-            checkBox9.setText("Same as Arch Linux");
+            checkBox10.setEnabled(false);
+            checkBox10.setText("Same as Arch Linux");
         }
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
@@ -539,24 +663,32 @@ public class Uninstaller extends Fragment{
                         distro = "Kali";
                     }
                 }else if(checkBox4.isChecked()){
+                    if(!distro.equals("Nethunter")){
+                        distro = "Nethunter";
+                    }
+                }else if(checkBox5.isChecked()){
                     if(!distro.equals("Parrot")){
                         distro = "Parrot";
                     }
-                }else if(checkBox5.isChecked()){
+                }else if(checkBox6.isChecked()){
                     if(!distro.equals("Fedora")){
                         distro = "Fedora";
                     }
-                }else if(checkBox6.isChecked()){
+                }else if(checkBox7.isChecked()){
                     if(!distro.equals("CentOS")){
                         distro = "CentOS";
                     }
-                }else if(checkBox7.isChecked()){
+                }else if(checkBox8.isChecked()){
                     if(!distro.equals("openSUSE")){
                         distro = "openSUSE";
                     }
-                }else if(checkBox8.isChecked()){
+                }else if(checkBox9.isChecked()){
                     if(!distro.equals("Arch")){
                         distro = "Arch";
+                    }
+                }else if(checkBox11.isChecked()){
+                    if(!distro.equals("Alpine")){
+                        distro = "Alpine";
                     }
                 }
                 if(distro.equals("Ubuntu")){
@@ -567,6 +699,9 @@ public class Uninstaller extends Fragment{
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }else if(distro.equals("Kali")){
                     textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Kali/UNI-kali.sh && bash UNI-kali.sh \n\n This should fully remove Kali from your system.");
+                    textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
+                }else if(distro.equals("Nethunter")){
+                    textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Nethunter/UNI-nethunter.sh && bash UNI-nethunter.sh \n\n This should fully remove Kali Nethunter from your system.");
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }else if(distro.equals("Parrot")){
                     textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Parrot/UNI-parrot.sh && bash UNI-parrot.sh \n\n This should fully remove Parrot Security OS from your system.");
@@ -582,6 +717,9 @@ public class Uninstaller extends Fragment{
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }else if(distro.equals("Arch")){
                     textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Arch/UNI-arch.sh && bash UNI-arch.sh \n\n This should fully remove Arch Linux from your system.");
+                    textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
+                }else if(distro.equals("Alpine")){
+                    textView2.setText("Step 2 : Copy the command to clipboard : wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Alpine/UNI-alpine.sh && bash UNI-alpine.sh \n\n This should fully remove Alpine from your system.");
                     textView3.setText("Step 3 : Start Termux, paste and enter the command to uninstall distro. Important: you will need to run this command inside Termux shell and NOT IN Linux Shell.");
                 }
                 button2.setEnabled(true);
