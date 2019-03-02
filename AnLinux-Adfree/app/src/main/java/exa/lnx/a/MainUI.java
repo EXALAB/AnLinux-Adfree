@@ -269,7 +269,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
         alertDialog.show();
-        textView.setText("Does not understand how it works?\n\nForgot how to start or exit distro, or forgot how to start the VNC Server(Desktop Enviroment)?\n\nThen this feature is for you, if you have these problem, you could find it in the Github wiki pages.\n\nVisit now?");
+        textView.setText(R.string.documentation_prompt);
     }
     public void notifyUserForSupport(){
         final ViewGroup nullParent = null;
@@ -301,7 +301,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
         alertDialog.show();
-        textView.setText("Thanks for using this app, do you want to support the developers?\n\nYou could choose to donate, or continue without donation, there would be no limitation in the app.\n\nIf you are willing to donate, you could found the donate button at the Github page, do you want to view the Github Page now?");
+        textView.setText(R.string.ask_for_donation);
     }
     public void notifyUserForSupportOnce(){
         final ViewGroup nullParent = null;
@@ -333,7 +333,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
         alertDialog.show();
-        textView.setText("Looks like it were sometimes since you use this application. Don't worry, we won't nag you, we only ask this once.\n\nSince this version is provided in F-Droid repo which is completely ads free, so we are asking for a donation that worth a cup of coffee.\n\nYou could choose to donate, or continue without donation, there would be no limitation in the app.\n\nIf you are willing to donate, you could found the donate button at the Github page, do you want to view the Github Page now?");
+        textView.setText(R.string.notify_support_once);
     }
     public void notifyUserToReportError(){
         final ViewGroup nullParent = null;
@@ -350,9 +350,9 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
 
                 emailIntent.setType("plain/text");
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"exalabdevelopers@gmail.com"});
-                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Bug Report");
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, R.string.bug_report1);
 
-                context.startActivity(Intent.createChooser(emailIntent, "Please choose an app"));
+                context.startActivity(Intent.createChooser(emailIntent, getString(R.string.bug_report2)));
             }
         });
         alertDialog.setNegativeButton("Github", new DialogInterface.OnClickListener() {
@@ -369,7 +369,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
         alertDialog.show();
-        textView.setText("If you encountered a bug, you can choose to open an issue on Github, or email us.");
+        textView.setText(R.string.bug_encounter);
     }
     private boolean donationInstalled() {
         PackageManager packageManager = context.getPackageManager();
