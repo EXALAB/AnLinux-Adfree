@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Uninstaller extends Fragment{
 
@@ -116,6 +117,7 @@ public class Uninstaller extends Fragment{
                     ClipData clip = ClipData.newPlainText("Command", "wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Alpine/UNI-alpine.sh && bash UNI-alpine.sh");
                     clipboard.setPrimaryClip(clip);
                 }
+                Toast.makeText(context, getString(R.string.command_copied), Toast.LENGTH_SHORT).show();
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {

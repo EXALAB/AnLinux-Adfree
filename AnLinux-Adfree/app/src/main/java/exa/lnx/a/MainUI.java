@@ -136,6 +136,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 fragmentTransaction.replace(R.id.fragmentHolder, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+            }else if(fragment instanceof SU){
+                fragment = new DashBoard();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         }
         return false;
@@ -183,6 +188,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             newFragment(5);
         }else if(id == R.id.documentation){
             notifyUserForDocumentation();
+        }else if(id == R.id.su){
+            MenuItem selected = navigationView.getMenu().findItem(R.id.su);
+            selected.setCheckable(true);
+            selected.setChecked(true);
+            newFragment(6);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -233,6 +243,13 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
 
             case 5:
                 fragment = new Patches();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+
+            case 6:
+                fragment = new SU();
                 fragmentTransaction.replace(R.id.fragmentHolder, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

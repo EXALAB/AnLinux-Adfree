@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SSH extends Fragment {
 
@@ -105,6 +106,7 @@ public class SSH extends Fragment {
                         clipboard.setPrimaryClip(clip);
                     }
                 }
+                Toast.makeText(context, getString(R.string.command_copied), Toast.LENGTH_SHORT).show();
             }
         });
 
