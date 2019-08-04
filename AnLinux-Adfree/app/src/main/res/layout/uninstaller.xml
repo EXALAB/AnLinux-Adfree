@@ -6,7 +6,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="45dp"
                 android:layout_margin="15dp"
-                android:text="Step 1 : Choose the distro you want to UNINSTALL, the distro will be removed without a trace and could not be recovered." />
+                android:text="@string/uninstall_step1" />
 
             <Button
                 android:id="@+id/button"
@@ -28,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView"
                 android:layout_centerHorizontal="true"
-                android:text="Choose" />
+                android:text="@string/choose" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -46,8 +47,8 @@
                 android:layout_alignLeft="@+id/button"
                 android:layout_alignStart="@+id/button"
                 android:layout_below="@+id/textView2"
-                android:layout_marginTop="19dp"
-                android:text="COPY" />
+               android:layout_marginTop="15dp"
+                android:text="@string/copy" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/button2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="43dp"
+                android:layout_marginTop="34dp"
                 android:layout_margin="15dp" />
 
             <Button
@@ -65,8 +66,8 @@
                 android:layout_alignLeft="@+id/button2"
                 android:layout_alignStart="@+id/button2"
                 android:layout_below="@+id/textView3"
-                android:layout_marginTop="25dp"
-                android:text="Launch" />
+               android:layout_marginTop="15dp"
+                android:text="@string/Launch" />
 
         </RelativeLayout>
 

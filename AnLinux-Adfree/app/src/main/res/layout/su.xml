@@ -21,7 +21,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="45dp"
                 android:layout_margin="15dp"
-                android:text="@string/root_content" />
+                android:text="@string/root_content0" />
 
             <Button
                 android:id="@+id/button"
