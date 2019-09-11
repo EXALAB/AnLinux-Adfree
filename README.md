@@ -36,6 +36,28 @@ Supported Desktop Environments:
 3. [LXQt](https://lxqt.org)
 4. [LXDE](https://lxde.org)
 
+
+
+## Window Manager
+
+We currently support 2 Desktop Environments, and only [Ubuntu](https://www.ubuntu.com/), [Debian](https://www.debian.org/), [Kali](https://www.kali.org/), [Parrot Security OS](https://www.parrotsec.org/), [Fedora](https://getfedora.org/) distros are supported.
+
+Supported Window Manager:
+
+1. [Awesome](https://awesomewm.org)
+2. [IceWM](https://ice-wm.org/)
+
+
+
+## Future target and todo:
+
+1. KDE and GNOME DE support. (Might retest other blacklisted DE too)
+2. Audio support.
+3. Fix PRoot error.
+4. Might consider support BSD distro.
+
+
+
 If you have any tweak, suggestion, recommendation, please open an issue on Github.
 
 
