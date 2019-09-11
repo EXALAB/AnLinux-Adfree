@@ -266,34 +266,50 @@ public class SSH extends Fragment {
                 if(checkBox.isChecked()){
                     if(!distro.equals("Ubuntu")){
                         distro = "Ubuntu";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox2.isChecked()){
                     if(!distro.equals("Debian")){
                         distro = "Debian";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox3.isChecked()){
                     if(!distro.equals("Kali")){
                         distro = "Kali";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox4.isChecked()){
                     if(!distro.equals("Parrot")){
                         distro = "Parrot";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox5.isChecked()){
                     if(!distro.equals("BackBox")){
                         distro = "BackBox";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox6.isChecked()){
                     if(!distro.equals("Fedora")){
                         distro = "Fedora";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox7.isChecked()){
                     if(!distro.equals("CentOS")){
                         distro = "CentOS";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }else if(checkBox8.isChecked()){
                     if(!distro.equals("Arch")){
                         distro = "Arch";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
                     }
                 }
                 if(distro.equals("Ubuntu")){
@@ -331,8 +347,6 @@ public class SSH extends Fragment {
                         textView3.setText(getString(R.string.ssh_step3, "./start-arch.sh"));
                     }
                 }
-                button2.setEnabled(true);
-                button3.setEnabled(true);
                 dialog.dismiss();
             }
         });
