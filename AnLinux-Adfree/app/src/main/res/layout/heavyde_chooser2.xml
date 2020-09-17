@@ -13,15 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Awesome"/>
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_below="@id/checkBox"
-            android:text="IceWM"/>
+            android:text="Ubuntu"/>
 
     </RelativeLayout>
 

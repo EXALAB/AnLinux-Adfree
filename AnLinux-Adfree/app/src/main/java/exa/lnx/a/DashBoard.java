@@ -122,6 +122,9 @@ public class DashBoard extends Fragment {
                 }else if(distro.equals("Alpine")){
                     ClipData clip = ClipData.newPlainText("Command", "pkg install wget openssl-tool proot tar -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Alpine/alpine.sh && bash alpine.sh");
                     clipboard.setPrimaryClip(clip);
+                }else if(distro.equals("Void")){
+                    ClipData clip = ClipData.newPlainText("Command", "pkg install wget openssl-tool proot tar -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Void/void.sh && bash void.sh");
+                    clipboard.setPrimaryClip(clip);
                 }
                 Toast.makeText(context, getString(R.string.command_copied), Toast.LENGTH_SHORT).show();
             }
@@ -161,6 +164,7 @@ public class DashBoard extends Fragment {
         final CheckBox checkBox11 = view.findViewById(R.id.checkBox11);
         final CheckBox checkBox12 = view.findViewById(R.id.checkBox12);
         final CheckBox checkBox13 = view.findViewById(R.id.checkBox13);
+        final CheckBox checkBox14 = view.findViewById(R.id.checkBox14);
 
         alertDialog.setView(view);
         alertDialog.setCancelable(false);
@@ -191,6 +195,8 @@ public class DashBoard extends Fragment {
             checkBox12.setChecked(true);
         }else if(distro.equals("Alpine")){
             checkBox13.setChecked(true);
+        }else if(distro.equals("Void")){
+            checkBox14.setChecked(true);
         }
 
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -208,6 +214,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox2.setOnClickListener(new View.OnClickListener() {
@@ -225,6 +232,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox3.setOnClickListener(new View.OnClickListener() {
@@ -242,6 +250,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox4.setOnClickListener(new View.OnClickListener() {
@@ -259,6 +268,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox5.setOnClickListener(new View.OnClickListener() {
@@ -276,6 +286,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox6.setOnClickListener(new View.OnClickListener() {
@@ -293,6 +304,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox7.setOnClickListener(new View.OnClickListener() {
@@ -310,6 +322,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox8.setOnClickListener(new View.OnClickListener() {
@@ -327,6 +340,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox9.setOnClickListener(new View.OnClickListener() {
@@ -344,6 +358,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox10.setOnClickListener(new View.OnClickListener() {
@@ -361,6 +376,7 @@ public class DashBoard extends Fragment {
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox11.setOnClickListener(new View.OnClickListener() {
@@ -378,6 +394,7 @@ public class DashBoard extends Fragment {
                 checkBox10.setChecked(false);
                 checkBox12.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox12.setOnClickListener(new View.OnClickListener() {
@@ -395,6 +412,7 @@ public class DashBoard extends Fragment {
                 checkBox10.setChecked(false);
                 checkBox11.setChecked(false);
                 checkBox13.setChecked(false);
+                checkBox14.setChecked(false);
             }
         });
         checkBox13.setOnClickListener(new View.OnClickListener() {
@@ -412,6 +430,25 @@ public class DashBoard extends Fragment {
                 checkBox10.setChecked(false);
                 checkBox11.setChecked(false);
                 checkBox12.setChecked(false);
+                checkBox14.setChecked(false);
+            }
+        });
+        checkBox14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBox.setChecked(false);
+                checkBox2.setChecked(false);
+                checkBox3.setChecked(false);
+                checkBox4.setChecked(false);
+                checkBox5.setChecked(false);
+                checkBox6.setChecked(false);
+                checkBox7.setChecked(false);
+                checkBox8.setChecked(false);
+                checkBox9.setChecked(false);
+                checkBox10.setChecked(false);
+                checkBox11.setChecked(false);
+                checkBox12.setChecked(false);
+                checkBox13.setChecked(false);
             }
         });
         if(s.equals("i386")){
@@ -510,6 +547,12 @@ public class DashBoard extends Fragment {
                         button2.setEnabled(true);
                         button3.setEnabled(true);
                     }
+                }else if(checkBox14.isChecked()){
+                    if(!distro.equals("Void")){
+                        distro = "Void";
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
+                    }
                 }
                 if(distro.equals("Ubuntu")){
                     textView2.setText(getString(R.string.dashboard_step2, "pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh", "Ubuntu", "./start-ubuntu.sh"));
@@ -556,6 +599,9 @@ public class DashBoard extends Fragment {
                 }else if(distro.equals("Alpine")){
                     textView2.setText(getString(R.string.dashboard_step2, "pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Alpine/alpine.sh && bash alpine.sh", "Alpine", "./start-alpine.sh"));
                     textView3.setText(getString(R.string.dashboard_step3, "./start-alpine.sh"));
+                }else if(distro.equals("Void")){
+                    textView2.setText(getString(R.string.dashboard_step2, "pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Void/void.sh && bash void.sh", "Void", "./start-void.sh"));
+                    textView3.setText(getString(R.string.dashboard_step3, "./start-void.sh"));
                 }
                 dialog.dismiss();
             }

@@ -68,7 +68,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if(savedInstanceState == null){
+        if(savedInstanceState == null) {
             MenuItem selected = navigationView.getMenu().findItem(R.id.dashboard);
             selected.setCheckable(true);
             selected.setChecked(true);
@@ -117,6 +117,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }else if(fragment instanceof DesktopEnvironment){
+                fragment = new DashBoard();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }else if(fragment instanceof HeavyDE){
                 fragment = new DashBoard();
                 fragmentTransaction.replace(R.id.fragmentHolder, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -181,6 +186,13 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             selected.setCheckable(true);
             selected.setChecked(true);
             newFragment(2);
+        }else if(id == R.id.hgui){
+            /*MenuItem selected = navigationView.getMenu().findItem(R.id.hgui);
+            selected.setCheckable(true);
+            selected.setChecked(true);
+            newFragment(9);*/
+            //Temporary Code
+            notifyUserForTemporary();
         }else if(id == R.id.wm){
             MenuItem selected = navigationView.getMenu().findItem(R.id.wm);
             selected.setCheckable(true);
@@ -284,6 +296,13 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
 
             case 8:
                 fragment = new RootfsDownload();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+
+            case 9:
+                fragment = new HeavyDE();
                 fragmentTransaction.replace(R.id.fragmentHolder, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
@@ -425,5 +444,31 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
     private boolean donationInstalled() {
         PackageManager packageManager = context.getPackageManager();
         return packageManager.checkSignatures(context.getPackageName(), "exa.lnx.d") == PackageManager.SIGNATURE_MATCH;
+    }
+    //Temporary Code
+    public void notifyUserForTemporary(){
+        final ViewGroup nullParent = null;
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainUI.this);
+        LayoutInflater layoutInflater = LayoutInflater.from(MainUI.this);
+        View view = layoutInflater.inflate(R.layout.notify1, nullParent);
+        TextView textView = view.findViewById(R.id.textView);
+
+        alertDialog.setView(view);
+        alertDialog.setCancelable(false);
+        alertDialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/EXALAB/AnLinux-App/issues/252"));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        alertDialog.show();
+        textView.setText("This feature originally enable user to install KDE on Ubuntu, which work perfectly on Ubuntu 18 (Bionic), however the same code failed for Ubuntu 20 (Focal), if you have any code that work correctly on Ubuntu Focal to contribute or want to know more about this, please go to the Github issue page.\n\nDo you want to go there now?");
     }
 }
