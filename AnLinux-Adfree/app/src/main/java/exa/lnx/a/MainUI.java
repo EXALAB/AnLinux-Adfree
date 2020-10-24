@@ -443,7 +443,12 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
     }
     private boolean donationInstalled() {
         PackageManager packageManager = context.getPackageManager();
-        return packageManager.checkSignatures(context.getPackageName(), "exa.lnx.d") == PackageManager.SIGNATURE_MATCH;
+        try {
+            packageManager.getPackageInfo("exa.lnx.d", 0);
+            return true;
+        }catch(PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
     //Temporary Code
     public void notifyUserForTemporary(){
