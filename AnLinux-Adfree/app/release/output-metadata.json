@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
@@ -10,10 +10,8 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "properties": [],
-      "versionCode": 617,
-      "versionName": "6.17",
-      "enabled": true,
+      "versionCode": 621,
+      "versionName": "6.21 Stable",
       "outputFile": "app-release.apk"
     }
   ]
