@@ -24,6 +24,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +41,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     boolean isOreoNotified;
+    boolean isFirstBugNotified;
     int support;
 
     @Override
@@ -63,6 +66,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
         sharedPreferences = context.getSharedPreferences("GlobalPreferences", 0);
         editor = sharedPreferences.edit();
         isOreoNotified = sharedPreferences.getBoolean("IsOreoNotified", false);
+        isFirstBugNotified = sharedPreferences.getBoolean("IsFirstBugNotified", false);
         support = sharedPreferences.getInt("Support", 0);
 
         navigationView = findViewById(R.id.nav_view);
@@ -84,6 +88,8 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                     editor.putInt("Support", support + 1);
                     editor.apply();
                 }
+            }else{
+                showFirstDialog();
             }
         }
     }
@@ -156,6 +162,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 fragmentTransaction.replace(R.id.fragmentHolder, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+            }else if(fragment instanceof Wiki){
+                fragment = new DashBoard();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         }
         return false;
@@ -180,7 +191,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 notifyUserForSupport();
             }
         }else if(id == R.id.report){
-            notifyUserToReportError();
+            if(isFirstBugNotified){
+                notifyUserToReportError();
+            }else{
+                showFirstReportBugDialog();
+            }
         }else if(id == R.id.gui){
             MenuItem selected = navigationView.getMenu().findItem(R.id.gui);
             selected.setCheckable(true);
@@ -225,6 +240,11 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
             selected.setCheckable(true);
             selected.setChecked(true);
             newFragment(8);
+        }else if(id == R.id.wiki){
+            MenuItem selected = navigationView.getMenu().findItem(R.id.wiki);
+            selected.setCheckable(true);
+            selected.setChecked(true);
+            newFragment(10);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -307,7 +327,91 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
+
+            case 10:
+                fragment = new Wiki();
+                fragmentTransaction.replace(R.id.fragmentHolder, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
         }
+    }
+    protected void showFirstDialog(){
+
+        final ViewGroup nullParent = null;
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View view = layoutInflater.inflate(R.layout.first_warning, nullParent);
+        CheckBox checkBox = view.findViewById(R.id.checkBox);
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which){
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("IsOreoNotified", true);
+                editor.apply();
+                isOreoNotified = sharedPreferences.getBoolean("IsOreoNotified", false);
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
+                }else{
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+                }
+            }
+        });
+    }
+    protected void showFirstReportBugDialog(){
+
+        final ViewGroup nullParent = null;
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View view = layoutInflater.inflate(R.layout.first_reportbug, nullParent);
+        CheckBox checkBox = view.findViewById(R.id.checkBox);
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which){
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.i_agree, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which){
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("IsFirstBugNotified", true);
+                editor.apply();
+                isOreoNotified = sharedPreferences.getBoolean("IsFirstBugNotified", false);
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setEnabled(false);
+                }else{
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setEnabled(true);
+                }
+            }
+        });
     }
     public void notifyUserForDocumentation(){
         final ViewGroup nullParent = null;
