@@ -34,7 +34,6 @@ public class DashBoard extends Fragment {
     TextView textView3;
     String distro;
     String s;
-    boolean isOreoNotified;
     boolean isNethunterNotified;
     SharedPreferences sharedPreferences;
 
@@ -46,7 +45,6 @@ public class DashBoard extends Fragment {
 
         context = getActivity().getApplicationContext();
         sharedPreferences = context.getSharedPreferences("GlobalPreferences", 0);
-        isOreoNotified = sharedPreferences.getBoolean("IsOreoNotified", false);
         isNethunterNotified = sharedPreferences.getBoolean("IsNethunterNotified", false);
 
         distro = "Nothing";
@@ -143,9 +141,6 @@ public class DashBoard extends Fragment {
                 }
             }
         });
-        if(!isOreoNotified){
-            showFirstDialog();
-        }
         return view;
     }
     public void notifyUserToChooseDistro(){
@@ -711,40 +706,5 @@ public class DashBoard extends Fragment {
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }
-    }
-    protected void showFirstDialog(){
-
-        final ViewGroup nullParent = null;
-
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-        LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-        View view = layoutInflater.inflate(R.layout.first_warning, nullParent);
-        CheckBox checkBox = view.findViewById(R.id.checkBox);
-        builder.setView(view);
-        builder.setCancelable(false);
-        builder.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which){
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("IsOreoNotified", true);
-                editor.apply();
-                isOreoNotified = sharedPreferences.getBoolean("IsOreoNotified", false);
-                dialog.dismiss();
-            }
-        });
-        final AlertDialog dialog = builder.create();
-        dialog.show();
-
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
-                }else{
-                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
-                }
-            }
-        });
     }
 }

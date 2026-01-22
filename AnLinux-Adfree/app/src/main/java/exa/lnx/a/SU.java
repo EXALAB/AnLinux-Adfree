@@ -53,7 +53,7 @@ public class SU extends Fragment {
                     showSUDialog();
                 }
                 ClipboardManager clipboard = (ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("Command", "pkg install tsu -y && hash -r");
+                ClipData clip = ClipData.newPlainText("Command", "pkg install sudo -y");
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(context, getString(R.string.command_copied), Toast.LENGTH_SHORT).show();
             }
