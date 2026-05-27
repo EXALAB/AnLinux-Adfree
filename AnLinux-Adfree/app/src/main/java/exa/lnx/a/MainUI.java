@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import android.view.KeyEvent;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -48,7 +47,6 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_ui);
 
@@ -71,17 +69,6 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
         isOreoNotified = sharedPreferences.getBoolean("IsOreoNotified", false);
         isFirstBugNotified = sharedPreferences.getBoolean("IsFirstBugNotified", false);
         support = sharedPreferences.getInt("Support", 0);
-
-        final long splashDelay = 2000;
-        final long startTime = System.currentTimeMillis();
-        splashScreen.setKeepOnScreenCondition(
-                () -> {
-                    long elapsed = System.currentTimeMillis() - startTime;
-                    return elapsed < splashDelay;
-                });
-        splashScreen.setOnExitAnimationListener(splashScreenview ->{
-            splashScreenview.remove();
-        });
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
