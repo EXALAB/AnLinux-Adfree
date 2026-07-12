@@ -6,8 +6,8 @@ android {
         minSdkVersion 24
         targetSdkVersion 37
         compileSdk 37
-        versionCode 673
-        versionName "6.73 Stable"
+        versionCode 675
+        versionName "6.75 Stable"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

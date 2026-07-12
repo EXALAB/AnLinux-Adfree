@@ -11,8 +11,8 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 673,
-      "versionName": "6.73 Stable",
+      "versionCode": 675,
+      "versionName": "6.75 Stable",
       "outputFile": "app-release.apk"
     }
   ],

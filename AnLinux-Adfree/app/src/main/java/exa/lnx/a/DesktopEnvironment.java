@@ -428,6 +428,12 @@ public class DesktopEnvironment extends Fragment {
             checkBox2.setEnabled(false);
             checkBox3.setEnabled(false);
         }
+        if(distro.equals("Fedora")){
+            checkBox.setText(R.string.not_available);
+            checkBox2.setText(R.string.not_available);
+            checkBox.setEnabled(false);
+            checkBox2.setEnabled(false);
+        }
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 if(checkBox.isChecked()){

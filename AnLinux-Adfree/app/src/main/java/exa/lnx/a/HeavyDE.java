@@ -82,18 +82,18 @@ public class HeavyDE extends Fragment {
                 ClipboardManager clipboard = (ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
                 if(desktop.equals("KDE")){
                     if(distro.equals("Ubuntu") | distro.equals("BackBox")){
-                        ClipData clip = ClipData.newPlainText("Command", "wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Ubuntu/de-ubuntu-kde.sh --no-check-certificate && bash de-ubuntu-kde.sh");
+                        ClipData clip = ClipData.newPlainText("Command", "apt-get update && apt-get install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Ubuntu/de-ubuntu-kde.sh --no-check-certificate && bash de-ubuntu-kde.sh");
                         clipboard.setPrimaryClip(clip);
                     }else if(distro.equals("Fedora")){
                         if(s.contains("arm") && !s.equals("arm64-v8a")){
-                            ClipData clip = ClipData.newPlainText("Command", "wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/arm/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh");
+                            ClipData clip = ClipData.newPlainText("Command", "yum install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/arm/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh");
                             clipboard.setPrimaryClip(clip);
                         }else{
-                            ClipData clip = ClipData.newPlainText("Command", "wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh");
+                            ClipData clip = ClipData.newPlainText("Command", "yum install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh");
                             clipboard.setPrimaryClip(clip);
                         }
                     } else{
-                        ClipData clip = ClipData.newPlainText("Command", "wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Apt/de-apt-kde.sh --no-check-certificate && bash de-apt-kde.sh");
+                        ClipData clip = ClipData.newPlainText("Command", "apt-get update && apt-get install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Apt/de-apt-kde.sh --no-check-certificate && bash de-apt-kde.sh");
                         clipboard.setPrimaryClip(clip);
                     }
                 }
@@ -167,7 +167,7 @@ public class HeavyDE extends Fragment {
         final CheckBox checkBox3 = view.findViewById(R.id.checkBox3);
         final CheckBox checkBox4 = view.findViewById(R.id.checkBox4);
         final CheckBox checkBox5 = view.findViewById(R.id.checkBox5);
-        final CheckBox checkBox6 = view.findViewById(R.id.checkBox6);
+        //final CheckBox checkBox6 = view.findViewById(R.id.checkBox6);
 
         if(distro.equals("Ubuntu")){
             checkBox.setChecked(true);
@@ -180,7 +180,7 @@ public class HeavyDE extends Fragment {
         }else if(distro.equals("BackBox")){
             checkBox5.setChecked(true);
         }else if(distro.equals("Fedora")){
-            checkBox6.setChecked(true);
+            //checkBox6.setChecked(true);
         }
 
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +190,7 @@ public class HeavyDE extends Fragment {
                 checkBox3.setChecked(false);
                 checkBox4.setChecked(false);
                 checkBox5.setChecked(false);
-                checkBox6.setChecked(false);
+                //checkBox6.setChecked(false);
             }
         });
         checkBox2.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +200,7 @@ public class HeavyDE extends Fragment {
                 checkBox3.setChecked(false);
                 checkBox4.setChecked(false);
                 checkBox5.setChecked(false);
-                checkBox6.setChecked(false);
+                //checkBox6.setChecked(false);
             }
         });
         checkBox3.setOnClickListener(new View.OnClickListener() {
@@ -210,7 +210,7 @@ public class HeavyDE extends Fragment {
                 checkBox2.setChecked(false);
                 checkBox4.setChecked(false);
                 checkBox5.setChecked(false);
-                checkBox6.setChecked(false);
+                //checkBox6.setChecked(false);
             }
         });
         checkBox4.setOnClickListener(new View.OnClickListener() {
@@ -220,7 +220,7 @@ public class HeavyDE extends Fragment {
                 checkBox2.setChecked(false);
                 checkBox3.setChecked(false);
                 checkBox5.setChecked(false);
-                checkBox6.setChecked(false);
+                //checkBox6.setChecked(false);
             }
         });
         checkBox5.setOnClickListener(new View.OnClickListener() {
@@ -230,10 +230,10 @@ public class HeavyDE extends Fragment {
                 checkBox2.setChecked(false);
                 checkBox3.setChecked(false);
                 checkBox4.setChecked(false);
-                checkBox6.setChecked(false);
+                //checkBox6.setChecked(false);
             }
         });
-        checkBox6.setOnClickListener(new View.OnClickListener() {
+        /*checkBox6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkBox.setChecked(false);
@@ -242,7 +242,7 @@ public class HeavyDE extends Fragment {
                 checkBox4.setChecked(false);
                 checkBox5.setChecked(false);
             }
-        });
+        });*/
 
         alertDialog.setView(view);
         alertDialog.setCancelable(false);
@@ -279,13 +279,13 @@ public class HeavyDE extends Fragment {
                         button3.setEnabled(true);
                         button4.setEnabled(true);
                     }
-                }else if(checkBox6.isChecked()){
+                }/*else if(checkBox6.isChecked()){
                     if(!distro.equals("Fedora")){
                         distro = "Fedora";
                         button3.setEnabled(true);
                         button4.setEnabled(true);
                     }
-                }
+                }*/
                 if(desktop.equals("KDE")){
                     if(distro.equals("Ubuntu")){
                         textView3.setText(getString(R.string.gui_step2, "apt-get update && apt-get install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Ubuntu/de-ubuntu-kde.sh --no-check-certificate && bash de-ubuntu-kde.sh", "KDE"));
@@ -304,7 +304,7 @@ public class HeavyDE extends Fragment {
                         textView4.setText(getString(R.string.gui_step3, "./start-backbox.sh"));
                     }else if(distro.equals("Fedora")){
                         if(s.contains("arm") && !s.equals("arm64-v8a")){
-                            textView3.setText(getString(R.string.gui_step2, "apt-get update && apt-get install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/arm/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh", "KDE"));
+                            textView3.setText(getString(R.string.gui_step2, "yum install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/arm/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh", "KDE"));
                             textView4.setText(getString(R.string.gui_step3, "./start-fedora.sh"));
                         }else{
                             textView3.setText(getString(R.string.gui_step2, "apt-get update && apt-get install wget -y && wget https://github.com/EXALAB/Anlinux-Resources/raw/master/Scripts/DesktopEnvironment/Heavy/KDE/Yum/de-yum-kde.sh --no-check-certificate && bash de-yum-kde.sh", "KDE"));
