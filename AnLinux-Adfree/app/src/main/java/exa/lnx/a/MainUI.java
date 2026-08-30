@@ -393,7 +393,7 @@ public class MainUI extends AppCompatActivity implements NavigationView.OnNaviga
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("IsFirstBugNotified", true);
                 editor.apply();
-                isOreoNotified = sharedPreferences.getBoolean("IsFirstBugNotified", false);
+                isFirstBugNotified = sharedPreferences.getBoolean("IsFirstBugNotified", false);
                 dialog.dismiss();
             }
         });

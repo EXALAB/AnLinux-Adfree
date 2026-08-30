@@ -1816,7 +1816,6 @@
           <option name="api" value="35" />
           <option name="brand" value="samsung" />
           <option name="codename" value="pa3q" />
-          <option name="default" value="true" />
           <option name="id" value="pa3q" />
           <option name="labId" value="google" />
           <option name="manufacturer" value="Samsung" />
@@ -1824,29 +1823,6 @@
           <option name="screenDensity" value="450" />
           <option name="screenX" value="1080" />
           <option name="screenY" value="2340" />
-          <option name="tags">
-            <list>
-              <option value="dda-default" />
-            </list>
-          </option>
-        </PersistentDeviceSelectionData>
-        <PersistentDeviceSelectionData>
-          <option name="api" value="36" />
-          <option name="brand" value="samsung" />
-          <option name="codename" value="pa3q" />
-          <option name="default" value="true" />
-          <option name="id" value="pa3q" />
-          <option name="labId" value="google" />
-          <option name="manufacturer" value="Samsung" />
-          <option name="name" value="Galaxy S25 Ultra" />
-          <option name="screenDensity" value="450" />
-          <option name="screenX" value="1080" />
-          <option name="screenY" value="2340" />
-          <option name="tags">
-            <list>
-              <option value="dda-default" />
-            </list>
-          </option>
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
           <option name="api" value="33" />

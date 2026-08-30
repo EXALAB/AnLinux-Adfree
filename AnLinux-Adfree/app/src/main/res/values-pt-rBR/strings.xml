@@ -56,13 +56,9 @@
     <string name="ashmem_step2">Etapa 2: Copiar o comando para a área de transferência: %1$s \n\nIsso deve instalar o %2$s em seu sistema.</string>
     <string name="ashmem_step3">Etapa 3: Iniciar o Termux, colar e digitar o comando para instalar as correções. Lembre-se: você precisará executar ./start-*.sh para iniciar o sistema Linux antes de usar este comando.</string>
     <string name="bug_encounter">Se você encontrou um bug, pode optar por abrir uma issue no GitHub ou nos enviar um e-mail.</string>
-    <string name="support_after_donation">Obrigado por adquirir o Pacote de Doação! Você ainda pode assistir anúncios para apoiar os desenvolvedores ou continuar usando o app.</string>
     <string name="ask_for_donation">Obrigado por usar este aplicativo! Quer apoiar os desenvolvedores?\n\nVocê pode assistir um vídeo publicitário para remover anúncios por um dia ou comprar um Pacote de Doação na Play Store para removê-los permanentemente.</string>
     <string name="bug_report1">Relatório de Bugs</string>
     <string name="bug_report2">Por favor, escolha um aplicativo</string>
-    <string name="no_video_ads">No momento, não há anúncios de vídeo disponíveis</string>
-    <string name="ads_removed_temp">Os anúncios foram removidos por hoje.</string>
-    <string name="thanks_for_support">Obrigado pelo seu apoio!!!</string>
     <string name="documentation_prompt">Não entende como funciona?\n\nEsqueceu como iniciar ou sair da distribuição, ou esqueceu como iniciar o Servidor VNC (Ambiente de Área de Trabalho)?\n\nEntão este recurso é para você. Se tiver esses problemas ou algo que não entenda sobre este aplicativo, poderá encontrar soluções nas páginas da wiki do GitHub.\n\nVisitar agora?</string>
     <string name="ssh_step2">Etapa 2: Copiar o comando para a área de transferência: %1$s \n\n Isso deve configurar o OpenSSH no sistema Linux.</string>
     <string name="ssh_step3">Etapa 3: Iniciar o Termux, colar e digitar o comando para configurar o SSH. Lembre-se: você precisará executar %1$s para iniciar o sistema Linux antes de usar este comando.</string>

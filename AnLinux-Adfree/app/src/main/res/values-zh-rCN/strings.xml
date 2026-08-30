@@ -55,13 +55,9 @@
     <string name="ashmem_step2">第二步：请复制此命令：%1$s \n\n这将会把 %2$s 安装到您的系统。</string>
     <string name="ashmem_step3">第三步：启动 Termux，粘贴并运行此命令以安装补丁。注意：您必须先运行 ./start-*.sh 启动 Linux 系统，然后才能使用此命令。</string>
     <string name="bug_encounter">如果您遇到 Bug，可以选择在 GitHub 上提交 Issue，或者向我们发送电子邮件。</string>
-    <string name="support_after_donation">感谢您购买捐赠包！您依然可以通过观看视频广告来支持开发者，或者继续使用此应用。</string>
     <string name="ask_for_donation">感谢您使用此应用，请问是否愿意支持开发者？\n\n您可以选择观看视频广告，这将免除当天应用内的所有广告；或者也可以在 Play 商店中购买捐赠包以永久免除广告。</string>
     <string name="bug_report1">报告错误</string>
     <string name="bug_report2">请选择一个应用</string>
-    <string name="no_video_ads">当前没有可播放的视频广告。</string>
-    <string name="ads_removed_temp">今日广告已免除。</string>
-    <string name="thanks_for_support">感谢您的支持！</string>
     <string name="documentation_prompt">不知道如何操作？\n\n忘记了如何启动或退出发行版，或者忘记了如何启动 VNC 服务（桌面环境）？\n\n那么此指南非常适合您。如果您有这些问题，或者对应用有任何不解，都可以在 GitHub 维基页面中找到解决方案。\n\n是否立即访问？</string>
     <string name="ssh_step2">第二步：请复制此命令：%1$s \n\n这将在 Linux 系统上设置 OpenSSH。</string>
     <string name="ssh_step3">第三步：启动 Termux，粘贴并运行此命令以设置 SSH。注意：您必须先运行 %1$s 启动 Linux 系统，然后才能使用此命令。</string>
